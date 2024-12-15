@@ -8,7 +8,7 @@
   "nui.nvim": { "branch": "main", "commit": "53e907ffe5eedebdca1cd503b00aa8692068ca46" },
   "nvim-web-devicons": { "branch": "master", "commit": "1736cb81bdc42e1ee206081a161bdb2af68fb7a1" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
-  "snacks.nvim": { "branch": "main", "commit": "33253de59260d40f38ee47faf5c8a7e81f91f42e" },
+  "snacks.nvim": { "branch": "main", "commit": "6a36f32eaa7d5d59e681b7b8112a85a58a2d563d" },
   "solarized-osaka.nvim": { "branch": "main", "commit": "b023c3f3b9f1ce5b67c22e4401563d03554921cf" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "dae2eac9d91464448b584c7949a31df8faefec56" },
   "telescope.nvim": { "branch": "master", "commit": "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc" },
