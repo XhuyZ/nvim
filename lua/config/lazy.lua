@@ -23,6 +23,8 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
+	{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { import = "lazyvim.plugins.extras.coding.blink" },
     { import = "plugins" },
   },
   -- Configure any other settings here. See the documentation for more details.
