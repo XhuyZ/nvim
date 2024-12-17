@@ -64,7 +64,7 @@ return {
           icon = " ",
           title = "Git Status",
           cmd = "git --no-pager diff --stat -B -M -C",
-          height = 1,
+          height = 3,
         },
       }
       return vim.tbl_map(function(cmd)

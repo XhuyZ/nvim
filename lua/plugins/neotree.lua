@@ -7,7 +7,7 @@ return{
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
-   -- vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>') 
+   -- vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>')
    keys = {
 		{
 			"<leader>E",

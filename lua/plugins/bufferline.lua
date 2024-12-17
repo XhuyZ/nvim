@@ -14,6 +14,11 @@ return{
     { "[B", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
     { "]B", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
   },
+  opts = function(_, opts)
+    if (vim.g.colors_name or ""):find("catppuccin") then
+      opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
+    end
+  end,
   opts = {
     options = {
 	    hover ={
