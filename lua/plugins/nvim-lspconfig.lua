@@ -10,7 +10,6 @@ return {
 				omnisharp = {
 					cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 					root_dir = require("lspconfig.util").root_pattern(".sln", ".csproj", ".git"),
-					capabilities = require("cmp_nvim_lsp").default_capabilities(),
 					on_attach = function(client, bufnr)
 						local opts = { noremap = true, silent = true }
 						vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
