@@ -7,25 +7,18 @@ return {
 		opts = {
 			servers = {
 				lua_ls = {},
+				omnisharp = {
+					cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+					root_dir = require("lspconfig.util").root_pattern(".sln", ".csproj", ".git"),
+					capabilities = require("cmp_nvim_lsp").default_capabilities(),
+					on_attach = function(client, bufnr)
+						local opts = { noremap = true, silent = true }
+						vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+						vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+						vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
+					end,
+				},
 			},
 		},
-		config = function(_, opts)
-			local lspconfig = require("lspconfig")
-			for server, config in pairs(opts.servers) do
-				-- passing config.capabilities to blink.cmp merges with the capabilities in your
-				-- `opts[server].capabilities, if you've defined it
-				config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-				lspconfig[server].setup(config)
-			end
-		end,
-
-		-- -- example calling setup directly for each LSP
-
-		--  config = function()
-		--    local capabilities = require('blink.cmp').get_lsp_capabilities()
-		--    local lspconfig = require('lspconfig')
-		--
-		--    lspconfig['lua-ls'].setup({ capabilities = capabilities })
-		--  end
 	},
 }
