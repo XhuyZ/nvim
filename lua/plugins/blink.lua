@@ -4,7 +4,7 @@ return {
 		"rafamadriz/friendly-snippets",
 		"onsails/lspkind.nvim",
 	},
-	version = "*",
+	version = "0.9.0",
 
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
