@@ -22,6 +22,7 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
 	spec = {
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		"akinsho/toggleterm.nvim",
 		{ import = "plugins" },
 	},
 	-- Configure any other settings here. See the documentation for more details.
