@@ -9,4 +9,5 @@ return {
 		},
 		config = true,
 	},
+    "akinsho/toggleterm.nvim",
 }
