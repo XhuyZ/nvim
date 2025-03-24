@@ -7,8 +7,14 @@ return {
 		opts = {
 			servers = {
 				lua_ls = {},
-				csharp_ls = {},
-				omnisharp = {},
+				-- csharp_ls = {},
+				omnisharp = {
+					cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+					root_dir = require("lspconfig.util").root_pattern(".sln", ".csproj", ".git"),
+					on_attach = function(client, bufnr)
+						local opts = { noremap = true, silent = true }
+					end,
+				},
 				tsserver = {
 					root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
 					on_attach = function(client, bufnr)
