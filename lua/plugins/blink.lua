@@ -2,7 +2,7 @@
 ---@type LazySpec
 return {
 	"saghen/blink.cmp",
-	dependencies = "rafamadriz/friendly-snippets",
+	dependencies = { "rafamadriz/friendly-snippets" },
 	version = "*",
 	event = { "InsertEnter", "CmdlineEnter" },
 
@@ -11,10 +11,9 @@ return {
 	opts = {
 		appearance = {
 			use_nvim_cmp_as_default = false,
-			nerd_font_variant = "mono",
+			nerd_font_variant = "normal",
 		},
 		completion = {
-			ghost_text = { enabled = true },
 			accept = { auto_brackets = { enabled = true } },
 			documentation = {
 				auto_show = true,
@@ -30,11 +29,6 @@ return {
 				},
 			},
 			menu = {
-				auto_show = function(ctx)
-					return vim.fn.getcmdtype() == ":"
-					-- enable for inputs as well, with:
-					-- or vim.fn.getcmdtype() == '@'
-				end,
 				border = "rounded",
 				draw = {
 					columns = {
@@ -53,12 +47,10 @@ return {
 			["<CR>"] = { "accept", "fallback" },
 			["<Tab>"] = {
 				function(cmp)
-					if cmp.is_ghost_text_visible() and not cmp.is_menu_visible() then
-						return cmp.accept()
-					end
+					return cmp.select_next()
 				end,
-				"show_and_insert",
-				"select_next",
+				"snippet_forward",
+				"fallback",
 			},
 			["<S-Tab>"] = {
 				function(cmp)
@@ -82,7 +74,7 @@ return {
 		},
 
 		sources = {
-			default = { "lazydev", "lsp", "path", "snippets", "buffer", "cmdline" },
+			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
 			providers = {
 				lazydev = {
 					name = "LazyDev",
@@ -103,15 +95,6 @@ return {
 				buffer = {
 					min_keyword_length = 4,
 					max_items = 5,
-				},
-				cmdline = {
-					min_keyword_length = function(ctx)
-						-- when typing a command, only show when the keyword is 3 characters or longer
-						if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
-							return 3
-						end
-						return 0
-					end,
 				},
 			},
 		},

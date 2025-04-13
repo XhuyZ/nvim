@@ -7,6 +7,7 @@ return {
 		opts = {
 			servers = {
 				lua_ls = {},
+				gopls = {},
 				-- csharp_ls = {},
 				omnisharp = {
 					cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
@@ -15,7 +16,7 @@ return {
 						local opts = { noremap = true, silent = true }
 					end,
 				},
-				tsserver = {
+				ts_ls = {
 					root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
 					on_attach = function(client, bufnr)
 						-- Disable formatting (use Prettier or other formatters)
