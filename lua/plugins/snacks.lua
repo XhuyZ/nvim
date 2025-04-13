@@ -2,6 +2,8 @@ return {
 	{
 		"folke/snacks.nvim",
 		opts = {
+			picker = {},
+			explorer = {},
 			image = {
 				formats = {
 					"png",
@@ -31,7 +33,6 @@ return {
 ██╔╝ ██╗██║  ██║╚██████╔╝   ██║   ███████╗
 ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚══════╝]],
 				},
-
 				sections = {
 					{ section = "header" },
 					{ section = "keys", gap = 1, padding = 1 },
