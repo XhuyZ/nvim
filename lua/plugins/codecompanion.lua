@@ -19,9 +19,14 @@ return {
 				},
 			},
 			strategies = {
-				-- Change the default chat adapter
 				chat = {
 					adapter = "anthropic",
+				},
+				inline = {
+					adapter = "copilot",
+				},
+				cmd = {
+					adapter = "deepseek",
 				},
 			},
 			opts = {

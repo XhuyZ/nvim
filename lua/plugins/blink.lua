@@ -2,7 +2,11 @@
 ---@type LazySpec
 return {
 	"saghen/blink.cmp",
-	dependencies = { "rafamadriz/friendly-snippets" },
+	dependencies = {
+		"rafamadriz/friendly-snippets",
+		"Kaiser-Yang/blink-cmp-avante",
+		"giuxtaposition/blink-cmp-copilot",
+	},
 	version = "*",
 	event = { "InsertEnter", "CmdlineEnter" },
 
@@ -74,7 +78,7 @@ return {
 		},
 
 		sources = {
-			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+			default = { "lazydev", "lsp", "path", "snippets", "buffer", "avante", "copilot" },
 			providers = {
 				lazydev = {
 					name = "LazyDev",
@@ -95,6 +99,18 @@ return {
 				buffer = {
 					min_keyword_length = 4,
 					max_items = 5,
+				},
+				avante = {
+					module = "blink-cmp-avante",
+					name = "Avante",
+					opts = {},
+				},
+				copilot = {
+					name = "copilot",
+					module = "blink-cmp-copilot",
+					kind = "Copilot",
+					score_offset = 100,
+					async = true,
 				},
 			},
 		},
