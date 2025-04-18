@@ -1,15 +1,15 @@
 return {
 	{
 		"mfussenegger/nvim-dap",
-		event = "User BaseFile",
+		event = "VeryLazy",
 		config = function()
 			local dap = require("dap")
 
 			-- C#
 			dap.adapters.coreclr = {
 				type = "executable",
-				command = vim.fn.stdpath("data") .. "/mason/bin/netcoredbg",
-				args = { "--interpreter=vscode" },
+				command = vim.fn.stdpath("data") .. "/home/xhuyz/.local/share/nvim/mason/bin/",
+				args = { "-m", "netcoredbg.adapter" },
 			}
 			dap.configurations.cs = {
 				{
