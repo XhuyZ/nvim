@@ -16,11 +16,28 @@ return {
 			dap.configurations.cs = {
 				{
 					type = "coreclr",
-					name = "launch - netcoredbg",
+					name = "Launch ASP.NET Core",
 					request = "launch",
 					program = function()
-						return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/bin/Debug/net9.0/learn_dbg", "file")
+						return vim.fn.input(
+							"Path to dll: ",
+							vim.fn.getcwd() .. "/bin/Debug/net9.0/Application.dll",
+							"file"
+						)
 					end,
+					cwd = vim.fn.getcwd(),
+					stopAtEntry = false,
+					serverReadyAction = {
+						action = "openExternally",
+						pattern = "Now listening on: (http?://\\S+)",
+					},
+					env = {
+						ASPNETCORE_ENVIRONMENT = "Development",
+					},
+					sourceFileMap = {
+						["/Views"] = "${workspaceFolder}/Views",
+						["/Areas"] = "${workspaceFolder}/Areas",
+					},
 				},
 			}
 
