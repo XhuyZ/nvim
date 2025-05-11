@@ -78,7 +78,7 @@ return {
 		},
 
 		sources = {
-			default = { "lazydev", "lsp", "path", "snippets", "buffer", "avante", "copilot" },
+			default = { "lazydev", "lsp", "path", "snippets", "buffer", "avante" },
 			providers = {
 				lazydev = {
 					name = "LazyDev",
@@ -104,13 +104,6 @@ return {
 					module = "blink-cmp-avante",
 					name = "Avante",
 					opts = {},
-				},
-				copilot = {
-					name = "copilot",
-					module = "blink-cmp-copilot",
-					kind = "Copilot",
-					score_offset = 100,
-					async = true,
 				},
 			},
 		},
