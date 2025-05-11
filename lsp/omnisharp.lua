@@ -7,12 +7,14 @@ return {
 	formatters = {
 		ignoreComments = false,
 	},
-	-- settings = {
-	-- 	Lua = {
-	-- 		runtime = {
-	-- 			version = "LuaJIT",
-	-- 		},
-	-- 		signatureHelp = { enabled = true },
-	-- 	},
-	-- },
+	settings = {
+		omnisharp = {
+			enableEditorConfigSupport = true,
+			enableMsBuildLoadProjectsOnDemand = false,
+			enableRoslynAnalyzers = true,
+			organizeImportsOnFormat = true,
+			enableImportCompletion = true,
+			sdkIncludePrereleases = true, -- use preview .NET SDKs if needed
+		},
+	},
 }
