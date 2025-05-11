@@ -1,6 +1,7 @@
 require("config.lazy")
-vim.lsp.enable({
-	-- lua
-	"luals",
-	"omnisharp",
+require("mason").setup({
+	registries = {
+		"github:mason-org/mason-registry",
+		"github:Crashdummyy/mason-registry",
+	},
 })

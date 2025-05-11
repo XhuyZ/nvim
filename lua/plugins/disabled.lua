@@ -1,10 +1,5 @@
 return {
-	{
-		"williamboman/mason.nvim",
-		enabled = true,
-	},
-	{
-		"saghen/blink.cmp",
-		enabled = true,
-	},
+	{ "neovim/nvim-lspconfig", enabled = false },
+	{ "williamboman/mason-lspconfig.nvim", enabled = true },
+	{ "williamboman/mason.nvim", enabled = true },
 }
