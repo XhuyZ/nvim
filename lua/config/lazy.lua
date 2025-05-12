@@ -21,7 +21,19 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 vim.lsp.enable({
 	"luals",
+	"clangd",
+	"docker_compose",
+	"dockerls",
+	"gopls",
+	"rust_analyzer",
+	"pylsp",
+	"yamlls",
+	"html",
+	"graphql",
+	"vtsls",
+	"latex",
 })
+
 require("lazy").setup({
 	spec = {
 		"akinsho/toggleterm.nvim",

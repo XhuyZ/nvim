@@ -1,5 +1,4 @@
----@type vim.lsp.Config
-return {
+vim.lsp.config["html"] = {
 	filetypes = { "html", "htmldjango", "tmpl", "gotmpl", "template" },
 	cmd = { "vscode-html-language-server", "--stdio" },
 	single_file_support = true,
