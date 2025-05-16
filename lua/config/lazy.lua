@@ -32,6 +32,7 @@ vim.lsp.enable({
 	"graphql",
 	"vtsls",
 	"latex",
+	"marksman",
 })
 
 require("lazy").setup({
