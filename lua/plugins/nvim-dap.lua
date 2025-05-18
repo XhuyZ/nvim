@@ -8,7 +8,7 @@ return {
 			-- C# adapter
 			dap.adapters.coreclr = {
 				type = "executable",
-				command = vim.fn.stdpath("data") .. "/mason/bin/netcoredbg",
+				command = vim.fn.stdpath("data") .. "/mason/bin/netcoredbg", --install netcoredbg via packagemanager
 				args = { "--interpreter=vscode" },
 			}
 
@@ -19,11 +19,7 @@ return {
 					name = "Launch ASP.NET Core",
 					request = "launch",
 					program = function()
-						return vim.fn.input(
-							"Path to dll: ",
-							vim.fn.getcwd() .. "/bin/Debug/net9.0/Application.dll",
-							"file"
-						)
+						return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/bin/Debug/net8.0/HB.API.dll", "file")
 					end,
 					cwd = vim.fn.getcwd(),
 					stopAtEntry = false,
