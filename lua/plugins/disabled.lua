@@ -3,4 +3,5 @@ return {
 	{ "williamboman/mason-lspconfig.nvim", enabled = true },
 	{ "williamboman/mason.nvim", enabled = true },
 	{ "nvim-telescope/telescope.nvim", enabled = false },
+	{ "m4xshen/hardtime.nvim", enable = false },
 }
