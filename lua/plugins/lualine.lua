@@ -1,9 +1,14 @@
 return {
 	{
 		"nvim-lualine/lualine.nvim",
+		dependencies = { "Kurren123/mssql.nvim" },
 		optional = true,
 		event = "VeryLazy",
 		opts = function(_, opts)
+			-- Thêm component của mssql vào lualine_c
+			table.insert(opts.sections.lualine_c, require("mssql").lualine_component)
+
+			-- Thêm component của copilot vào lualine_x tại vị trí thứ 2
 			table.insert(
 				opts.sections.lualine_x,
 				2,
@@ -17,6 +22,8 @@ return {
 					end
 				end)
 			)
+
+			return opts
 		end,
 	},
 }
