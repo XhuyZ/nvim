@@ -11,3 +11,4 @@
 - texlab
 - vscode-html-language-server
 - clangd-opt
+- install roslyn,jq,csharpier via mason

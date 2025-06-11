@@ -6,6 +6,7 @@ return {
 				lua = { "stylua" },
 				-- Conform will run multiple formatters sequentially
 				csharpier = { "csharpier" },
+				jq = { "jq" },
 			},
 		},
 	},
