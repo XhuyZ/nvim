@@ -1,3 +1,4 @@
+# Warning this README not complete yet XhuyZ will working on it later
 # This neovim repo use native lsp make sure installed these via your package manager
 ## Requirement
 - git
