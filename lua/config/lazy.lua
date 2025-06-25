@@ -33,6 +33,7 @@ vim.lsp.enable({
 	"vtsls",
 	"latex",
 	"marksman",
+	"nil_ls",
 })
 
 require("lazy").setup({

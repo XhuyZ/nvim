@@ -14,7 +14,7 @@ return {
 		version = "*", -- or specify a version like "v2.0.0"
 		opts = {
 			direction = "float",
-			open_mapping = [[<c-t>]],
+			open_mapping = [[<c-\>]],
 			shell = "nu",
 		},
 		config = true,
