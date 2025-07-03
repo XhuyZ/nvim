@@ -30,7 +30,7 @@ vim.lsp.enable({
 	"yamlls",
 	"html",
 	"graphql",
-	"vtsls",
+	"ts_ls",
 	"latex",
 	"marksman",
 	"nil_ls",
