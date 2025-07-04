@@ -7,6 +7,7 @@ return {
 				-- Conform will run multiple formatters sequentially
 				csharpier = { "csharpier" },
 				jq = { "jq" },
+				typescript = { "prettierd", "prettier", stop_after_first = true },
 			},
 		},
 	},
