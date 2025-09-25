@@ -41,6 +41,10 @@ return {
 					},
 					treesitter = { "lsp" },
 				},
+				-- neocodium here
+				-- auto_show = function(ctx)
+				-- 	return ctx.mode ~= "default"
+				-- end,
 			},
 		},
 
